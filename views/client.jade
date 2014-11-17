@@ -1,0 +1,19 @@
+extends layout
+
+block connect
+	script(src='/javascripts/connect-client.js')
+
+block content
+	#content
+		#video
+			.VideoTitle
+			#player
+			.viewerInfo
+				span#viewCounter
+		#enter
+			form(name='videoConfig', id='videoConfig')
+				input(type='text', name='channel', id='channel', placeholder='Channel', autocomplete="off", tabindex="1", class="txtinput", onclick="this.select()", readonly)
+		#chat
+		#input
+			.tip
+			input(type='text', name='chatInput', id='chatInput', placeholder='say...', autocomplete='off')

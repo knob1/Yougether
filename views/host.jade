@@ -1,0 +1,57 @@
+extends layout
+
+block connect
+	script(src='/javascripts/connect-host.js')
+
+block navigation
+	.navigation
+				ul#menu
+					li 
+						a(href='javascript:void(0)', onclick='goToDiv("video")') video
+					li 
+						a(href='javascript:void(0)', onclick='goToDiv("howTo")') howto
+					li 
+						a(href='javascript:void(0)', onclick='goToDiv("about")') about
+
+block content
+	#content
+		#video
+			.VideoTitle
+			#player
+			.viewerInfo
+				span#viewCounter
+		#enter
+			form(name='videoConfig', id='videoConfig')
+				input(type='text', name='channel', id='channel', placeholder='Channel', autocomplete="off", tabindex="1", class="txtinput", onclick="this.select()", readonly)
+				#resultBox
+					input(type='text', name='videourl', id='videourl', placeholder='Search YouTube / Video URL', autocomplete="off", tabindex="1", class="txtinput", onchange="loadURL($('#videourl').val())", onBlur="hideResults()")
+					#results
+		#chat
+		#input
+			.tip
+			input(type='text', name='chatInput', id='chatInput', placeholder='say...', autocomplete='off')
+	
+	#howtoAndSupport
+		#howto
+			h2 how to use yougether
+			.paragraph#first
+				.circleNumber
+					#one
+				p.tutorial
+					| enter the link of the video you want to show or search the youtube database
+			.paragraph#second
+				.circleNumber
+					#two
+				p.tutorial
+					| send the link of your channel to your friends to watch your videos together
+		#support
+			h2 supported platforms
+			.paragraph#youtube
+				.circleNumber
+					#ytImg
+				p.tutorial | supported
+			.paragraph#vimeo
+				.circleNumber
+					#vimeoImg
+				p.tutorial | (upcomming)
+

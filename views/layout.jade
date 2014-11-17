@@ -1,0 +1,72 @@
+doctype 5
+html
+	head
+	title= title
+	meta(name="author", content="Sebastian Römer")
+	meta(name="copyright", content="Sebastian Römer")
+	meta(name="description", content="Watch online Videos together with your friends - simultaneously. Invite friends into your channel and share your favorite videos")
+	meta(name="keywords", content="YouTube, Together, simultaneous, gleichzeitig, gemeinsam, Vimeo, Share, ")
+	meta(name="page-topic", content="Dienstleistung")
+	meta(name="page-type", content="Video")
+	meta(name="audience", content="Alle")
+	meta(http-equiv="content-language", content="en")
+	meta(http-equiv="content-language", content="de")
+	meta(name="robots", content="index, follow")
+	link(rel='stylesheet', href='/stylesheets/style.css')
+	script(src='/socket.io/socket.io.js')
+	script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js') 
+	script(src='/javascripts/jquery.fancybox.pack.js')
+	script(src='/javascripts/jquery.cookie.js')
+	script(src='/javascripts/jquery.mousewheel.js')
+	script(src='/javascripts/jquery.jscrollpane.min.js')  
+	link(rel='stylesheet', href='/stylesheets/jquery.fancybox.css') 
+	link(type='text/css', href='/stylesheets/jquery.jscrollpane.css', rel='stylesheet', media="all")
+	block connect
+	body
+		#wrapper
+			#header
+				.logo
+					#tv :
+					#captTitle 
+						a(href='http://www.yougether.net') YOUGETHER
+					#subTitle
+						:markdown
+							watch videos instantly **together** and **synchronous**
+				#headerInfo
+					#userName
+						#welcome hi 
+						.changeName 
+							//a(href='javascript:void(0)', onclick='') [change Name]
+					.social
+						#facebook 
+							a(href='https://www.facebook.com/pages/Yougether/129040650588735', target='_blank') v
+						#twitter 
+							a(href='https://twitter.com/yougetherNET', target='_blank') u
+			block navigation
+			
+			#header-spacer
+			block content
+			#about
+				.aboutFrame
+					#aboutImg
+					p.aboutName 
+						a(href='http://www.google.com/recaptcha/mailhide/d?k=01ldRyA_rfTkfObV8a75YEBw==&c=3jhM8RwsW0c2ySJpqReoa9M7CNGsnZZp-yBsd8_1clE=') Sebastian
+					p.aboutDesc
+						| developer of   
+						a(href='http://www.yougether.net') www.yougether.net
+			#footer-spacer
+			#footer
+				#hiddenDiv
+					p.startLabel Please enter:
+					input(type='text', name='name', id='name', placeholder='Your (Channel) Name', autocomplete="off", tabindex="1", class="txtinput")
+					p.infoLabel
+					.startButton#ok-button 
+						p.startButtonText ok
+						a(href='javascript:void(0)', title='Ok', id='fancybox-ok')
+					.startButton#no-button 
+						p.startButtonText no
+						a(href='javascript:void(0)', title='No')
+				#info
+					:markdown
+						(copyright 2013 [http://www.yougether.net](http://www.yougether.net))
+					p.infos 
